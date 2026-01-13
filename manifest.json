@@ -8,43 +8,182 @@
   },
 
   "toolchains": {
-    "win64": {
-      "display_name": "Windows 64-bit",
-      "target_cpu": "x86_64",
-      "target_os": "win64",
-      "binutils_prefix": "x86_64-w64-mingw32-",
-      "host_platforms": {
-        "linux-x86_64": {
-          "binutils": {
-            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/win64-binutils-linux-x86_64.tar.gz",
-            "mirrors": [],
-            "format": "tar.gz",
-            "sha256": "5daea91134013a933f882ce3ed34712af1ffab947845a33498c0dffc7ee0b221",
-            "size": 10485760
-          },
-          "libraries": {
-            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/win64-libs-linux-x86_64.tar.gz",
-            "mirrors": [],
-            "format": "tar.gz",
-            "sha256": "c78aa77e387b00b0ad3d113a5096b12db8481559d88a3877ca9f8ae3ddc32114",
-            "size": 5242880
-          }
-        }
-      }
-    },
-    "arm-linux": {
-      "display_name": "ARM Linux (32-bit)",
-      "target_cpu": "arm",
-      "target_os": "linux",
-      "binutils_prefix": "arm-linux-gnueabihf-",
-      "host_platforms": {}
-    },
     "aarch64-linux": {
       "display_name": "ARM64 Linux",
       "target_cpu": "aarch64",
       "target_os": "linux",
       "binutils_prefix": "aarch64-linux-gnu-",
-      "host_platforms": {}
+      "host_platforms": {
+        "windows-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-aarch64-windows-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-aarch64-windows-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "a7ad5e459df018307e1165d2be62d62cee24ba4a6c7bdc3396426f311ff7ceaf",
+            "size": 9826791
+          },
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-aarch64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-aarch64.zip"
+            ],
+            "format": "zip",
+            "sha256": "3f7d776411e3f9023655c5eff900c08922fc4f8c0882624dcffdf14ecc89d158",
+            "size": 49340292
+          }
+        },
+        "linux-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-aarch64-linux-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-aarch64-linux-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "7d54a821340ae287bf2e5ffeceeb4e20d5213f3d4691144c68ee3c032261cdc6",
+            "size": 31462219
+          },
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-aarch64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-aarch64.zip"
+            ],
+            "format": "zip",
+            "sha256": "3f7d776411e3f9023655c5eff900c08922fc4f8c0882624dcffdf14ecc89d158",
+            "size": 49340292
+          }
+        }
+      }
+    },
+    "arm-linux": {
+      "display_name": "ARM Linux (32-bit, Raspbian)",
+      "target_cpu": "arm",
+      "target_os": "linux",
+      "binutils_prefix": "arm-linux-gnueabihf-",
+      "host_platforms": {
+        "windows-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-arm-windows-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-arm-windows-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "c6086f6b58c40f57d9dce0b5027bfc103e9b306531c0ec65c46d2e217b7b40b5",
+            "size": 7939713
+          },
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-armhf.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-linux-armhf.zip"
+            ],
+            "format": "zip",
+            "sha256": "21d07ff35b59022f5390c16a1f212a358a9a5322e63aa197a8b8c112f2cce8df",
+            "size": 41962280
+          }
+        }
+      }
+    },
+    "x86_64-linux": {
+      "display_name": "Linux 64-bit",
+      "target_cpu": "x86_64",
+      "target_os": "linux",
+      "binutils_prefix": "x86_64-linux-gnu-",
+      "host_platforms": {
+        "windows-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-x86_64-windows-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-linux-x86_64-windows-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "be7f575c4383c98f4a14d22cd939c58c9d8a458b8e3fc2125348eca5e9826733",
+            "size": 9077284
+          }
+        }
+      }
+    },
+    "darwin-all": {
+      "display_name": "macOS (x86_64 + ARM64)",
+      "target_cpu": "all",
+      "target_os": "darwin",
+      "binutils_prefix": "",
+      "host_platforms": {
+        "windows-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-darwin-all-windows-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-darwin-all-windows-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "d50b8e075934873fff3be7ce86714c1e1fe8c2136f43d4ab28b75d752848b141",
+            "size": 64386745,
+            "notes": "Clang 15 toolchain"
+          },
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-darwin-all.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-darwin-all.zip"
+            ],
+            "format": "zip",
+            "sha256": "09dada9626bb15af179d08fdd9e8aae5da0e99f30b17e8e42ed48eec70dc4677",
+            "size": 81392595
+          }
+        },
+        "linux-x86_64": {
+          "binutils": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-darwin-all-linux-x86_64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/binutils-darwin-all-linux-x86_64.zip"
+            ],
+            "format": "zip",
+            "sha256": "feb085d457009d16d7bce7d45defa8e90ed7cb02f84679fa647ad6b6714f2817",
+            "size": 10439523,
+            "notes": "Clang 14 toolchain"
+          },
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-darwin-all.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-darwin-all.zip"
+            ],
+            "format": "zip",
+            "sha256": "09dada9626bb15af179d08fdd9e8aae5da0e99f30b17e8e42ed48eec70dc4677",
+            "size": 81392595
+          }
+        }
+      }
+    },
+    "aarch64-android": {
+      "display_name": "Android ARM64",
+      "target_cpu": "aarch64",
+      "target_os": "android",
+      "binutils_prefix": "aarch64-linux-android-",
+      "host_platforms": {
+        "windows-x86_64": {
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-android-aarch64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-android-aarch64.zip"
+            ],
+            "format": "zip",
+            "sha256": "ee3a300bef42ef2de5b7e437418b801612885f8adcec65c4a6a06735e45e4993",
+            "size": 3331596,
+            "notes": "API level 21"
+          }
+        },
+        "linux-x86_64": {
+          "libraries": {
+            "url": "https://github.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-android-aarch64.zip",
+            "mirrors": [
+              "https://gitee.com/dtamade/fpdev-cross/releases/download/v1.0.0/libs-android-aarch64.zip"
+            ],
+            "format": "zip",
+            "sha256": "ee3a300bef42ef2de5b7e437418b801612885f8adcec65c4a6a06735e45e4993",
+            "size": 3331596,
+            "notes": "API level 21"
+          }
+        }
+      }
     }
   }
 }
